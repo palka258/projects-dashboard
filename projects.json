@@ -5,24 +5,38 @@
       "id": "airtraining-site",
       "name": "Авиашкола — сайт",
       "status": "in_progress",
+      "version": "web build 0.0.9",
       "repo": "https://github.com/palka258/Airtraining",
-      "liveUrl": "",
-      "description": "Веб-версия проекта авиашколы.",
+      "liveUrl": "https://airtraining-372ba.web.app",
+      "description": "Веб-версия на том же Supabase-бэкенде, что и мобильное приложение (без Firebase на вебе). Login/Registration, Calendar, Weather, OM/TM/SR и Admin уже нативно под веб, остальные страницы пока открываются как в приложении.",
       "updatedAt": "2026-09-07",
       "stages": [
-        { "title": "Заполнить актуальный статус", "status": "todo", "note": "Расскажи Claude, на каком этапе сайт сейчас — он обновит эту карточку." }
+        { "title": "Login / Registration", "status": "done" },
+        { "title": "Главный экран с вкладками сверху", "status": "done" },
+        { "title": "Calendar — месячная сетка с превью рейсов и подтверждением заявок", "status": "done" },
+        { "title": "Weather (METAR/TAF через свою прокси-функцию из-за CORS)", "status": "done" },
+        { "title": "OM/TM/SR и Admin — карточные сетки", "status": "done" },
+        { "title": "Убрать отладочный бейдж версии сборки перед реальным запуском", "status": "todo" },
+        { "title": "Остальные страницы (Profile, Theory, Recommendations) как нативный веб", "status": "todo" },
+        { "title": "Печать инвойсов", "status": "todo", "note": "исходная причина, зачем вообще делали веб" },
+        { "title": "Свой домен вместо airtraining-372ba.web.app", "status": "todo" }
       ]
     },
     {
       "id": "airtraining-app",
       "name": "Авиашкола — мобильное приложение",
       "status": "in_progress",
+      "version": "1.0.5 (build 113)",
       "repo": "https://github.com/palka258/Airtraining",
       "liveUrl": "",
-      "description": "Flutter-приложение авиашколы (Android/iOS).",
+      "description": "Flutter-приложение (Android/iOS) на Supabase. В App Store точно live версия 1.0.3 — 1.0.4/1.0.5 собраны и загружены в App Store Connect, но, насколько известно из этой сессии, версия 1.0.5 не была отправлена на ревью (осталась в статусе Prepare for Submission). Это надо перепроверить и подтвердить руками в App Store Connect.",
       "updatedAt": "2026-09-07",
       "stages": [
-        { "title": "Заполнить актуальный статус", "status": "todo", "note": "Расскажи Claude, на каком этапе приложение сейчас — он обновит эту карточку." }
+        { "title": "Push-уведомления (APNs)", "status": "done", "note": "ключ был Sandbox-only в Production-слоте Firebase" },
+        { "title": "Утечка хранилища OM/TM", "status": "done", "note": "любой авторизованный юзер мог читать документы напрямую через Storage API" },
+        { "title": "Синхронизация с Google Calendar", "status": "done", "note": "битый sync token + слишком строгий парсер заголовков" },
+        { "title": "Язык не сохранялся в профиле", "status": "done", "note": "исправлено в коде, но фикс мог не дойти до реальных телефонов — см. ниже" },
+        { "title": "Отправить 1.0.5 (build 113) на ревью в App Store", "status": "todo", "note": "без этого фиксы из билда не попадут пользователям" }
       ]
     },
     {
