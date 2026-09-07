@@ -1,0 +1,29 @@
+{
+  "updated": "2026-09-07",
+  "projects": [
+    {
+      "id": "airtraining-site",
+      "name": "Авиашкола — сайт",
+      "status": "in_progress",
+      "repo": "https://github.com/palka258/Airtraining",
+      "liveUrl": "",
+      "description": "Веб-версия проекта авиашколы.",
+      "updatedAt": "2026-09-07",
+      "stages": [
+        { "title": "Заполнить актуальный статус", "status": "todo", "note": "Расскажи Claude, на каком этапе сайт сейчас — он обновит эту карточку." }
+      ]
+    },
+    {
+      "id": "airtraining-app",
+      "name": "Авиашкола — мобильное приложение",
+      "status": "in_progress",
+      "repo": "https://github.com/palka258/Airtraining",
+      "liveUrl": "",
+      "description": "Flutter-приложение авиашколы (Android/iOS).",
+      "updatedAt": "2026-09-07",
+      "stages": [
+        { "title": "Заполнить актуальный статус", "status": "todo", "note": "Расскажи Claude, на каком этапе приложение сейчас — он обновит эту карточку." }
+      ]
+    }
+  ]
+}
