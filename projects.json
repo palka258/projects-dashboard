@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "projects": [
     {
       "id": "airtraining-site",
@@ -26,17 +26,18 @@
       "id": "airtraining-app",
       "name": "Авиашкола — мобильное приложение",
       "status": "in_progress",
-      "version": "1.0.5 (build 113)",
+      "version": "1.0.6 (build 114)",
       "repo": "https://github.com/palka258/Airtraining",
       "liveUrl": "",
-      "description": "Flutter-приложение (Android/iOS) на Supabase. В App Store точно live версия 1.0.3 — 1.0.4/1.0.5 собраны и загружены в App Store Connect, но, насколько известно из этой сессии, версия 1.0.5 не была отправлена на ревью (осталась в статусе Prepare for Submission). Это надо перепроверить и подтвердить руками в App Store Connect.",
-      "updatedAt": "2026-09-07",
+      "description": "Flutter-приложение (Android/iOS) на Supabase. В App Store точно live версия 1.0.3 — 1.0.4/1.0.5/1.0.6 собраны и запушены, но по состоянию на эту сессию ни одна из них не была отправлена на ревью (осталась в статусе Prepare for Submission). Это надо перепроверить и подтвердить руками в App Store Connect.",
+      "updatedAt": "2026-09-08",
       "stages": [
         { "title": "Push-уведомления (APNs)", "status": "done", "note": "ключ был Sandbox-only в Production-слоте Firebase" },
         { "title": "Утечка хранилища OM/TM", "status": "done", "note": "любой авторизованный юзер мог читать документы напрямую через Storage API" },
         { "title": "Синхронизация с Google Calendar", "status": "done", "note": "битый sync token + слишком строгий парсер заголовков" },
-        { "title": "Язык не сохранялся в профиле", "status": "done", "note": "исправлено в коде, но фикс мог не дойти до реальных телефонов — см. ниже" },
-        { "title": "Отправить 1.0.5 (build 113) на ревью в App Store", "status": "todo", "note": "без этого фиксы из билда не попадут пользователям" }
+        { "title": "Язык не сохранялся в профиле", "status": "done", "note": "дропдаун не подхватывал сохранённое значение из БД — почищено в build 114" },
+        { "title": "Инвойсы: разделить юр. лицо и физ. лицо", "status": "todo", "note": "нужны разные реквизиты/поля счёта в зависимости от типа плательщика" },
+        { "title": "Отправить 1.0.6 (build 114) на ревью в App Store", "status": "todo", "note": "без этого фиксы из билда не попадут пользователям" }
       ]
     },
     {
