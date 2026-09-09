@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "projects": [
     {
       "id": "airtraining-site",
@@ -26,18 +26,19 @@
       "id": "airtraining-app",
       "name": "Авиашкола — мобильное приложение",
       "status": "in_progress",
-      "version": "1.0.6 (build 114)",
+      "version": "1.0.7 (build 115)",
       "repo": "https://github.com/palka258/Airtraining",
       "liveUrl": "",
-      "description": "Flutter-приложение (Android/iOS) на Supabase. В App Store точно live версия 1.0.3 — 1.0.4/1.0.5/1.0.6 собраны и запушены, но по состоянию на эту сессию ни одна из них не была отправлена на ревью (осталась в статусе Prepare for Submission). Это надо перепроверить и подтвердить руками в App Store Connect.",
-      "updatedAt": "2026-09-08",
+      "description": "Flutter-приложение (Android/iOS) на Supabase. В App Store live версия 1.0.3. Build 114 (1.0.6) успешно заархивировался в Xcode Cloud, но так и не появился в TestFlight спустя сутки — причина не найдена (не проблема с экспортным шифрованием, у сборки просто не было статуса вообще). Запушен build 115 (1.0.7) как повторная попытка.",
+      "updatedAt": "2026-09-09",
       "stages": [
         { "title": "Push-уведомления (APNs)", "status": "done", "note": "ключ был Sandbox-only в Production-слоте Firebase" },
         { "title": "Утечка хранилища OM/TM", "status": "done", "note": "любой авторизованный юзер мог читать документы напрямую через Storage API" },
         { "title": "Синхронизация с Google Calendar", "status": "done", "note": "битый sync token + слишком строгий парсер заголовков" },
         { "title": "Язык не сохранялся в профиле", "status": "done", "note": "дропдаун не подхватывал сохранённое значение из БД — почищено в build 114" },
         { "title": "Инвойсы: разделить юр. лицо и физ. лицо", "status": "todo", "note": "нужны разные реквизиты/поля счёта в зависимости от типа плательщика" },
-        { "title": "Отправить 1.0.6 (build 114) на ревью в App Store", "status": "todo", "note": "без этого фиксы из билда не попадут пользователям" }
+        { "title": "Разобраться, почему build 114 не дошёл до TestFlight", "status": "todo", "note": "Archive прошёл успешно в Xcode Cloud, но сборка не появилась в TestFlight вообще — ждём, дойдёт ли build 115" },
+        { "title": "Отправить рабочую сборку на ревью в App Store", "status": "todo", "note": "без этого фиксы не попадут пользователям" }
       ]
     },
     {
