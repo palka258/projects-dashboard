@@ -44,7 +44,7 @@
     line-height: 1.45;
   }
   header {
-    max-width: 880px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 48px 24px 16px;
   }
@@ -59,18 +59,42 @@
     font-size: 14px;
   }
   main {
-    max-width: 880px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 8px 24px 64px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    align-items: start;
   }
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 22px 24px;
+    padding: 0;
+  }
+  .card[open] {
+    border-color: var(--accent);
+  }
+  .card > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .card > summary::-webkit-details-marker { display: none; }
+  .card > summary .chevron {
+    color: var(--text-dim);
+    font-size: 12px;
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+  }
+  .card[open] > summary .chevron { transform: rotate(90deg); }
+  .card-body {
+    padding: 0 20px 20px;
   }
   .card-head {
     display: flex;
@@ -78,10 +102,14 @@
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
+    min-width: 0;
   }
   .card-head h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .badge {
     font-size: 12px;
@@ -144,7 +172,7 @@
     color: var(--text-dim);
   }
   footer {
-    max-width: 880px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 0 24px 48px;
     color: var(--text-dim);
@@ -172,14 +200,20 @@ function el(tag, cls, text) {
 }
 
 function renderProject(p) {
-  const card = el("div", "card");
+  const card = document.createElement("details");
+  card.className = "card";
 
+  const summary = document.createElement("summary");
   const head = el("div", "card-head");
   head.appendChild(el("h2", null, p.name));
   head.appendChild(el("span", "badge " + p.status, STATUS_LABEL[p.status] || p.status));
-  card.appendChild(head);
+  summary.appendChild(head);
+  summary.appendChild(el("span", "chevron", "▸"));
+  card.appendChild(summary);
 
-  if (p.description) card.appendChild(el("p", "desc", p.description));
+  const body = el("div", "card-body");
+
+  if (p.description) body.appendChild(el("p", "desc", p.description));
 
   if (p.repo || p.liveUrl) {
     const links = el("div", "links");
@@ -193,7 +227,7 @@ function renderProject(p) {
       a.href = p.repo; a.target = "_blank"; a.rel = "noopener";
       links.appendChild(a);
     }
-    card.appendChild(links);
+    body.appendChild(links);
   }
 
   if (p.stages && p.stages.length) {
@@ -201,17 +235,18 @@ function renderProject(p) {
     p.stages.forEach(s => {
       const li = el("li");
       li.appendChild(el("div", "dot " + s.status));
-      const body = el("div", "stage-body");
-      body.appendChild(el("div", "title", s.title));
-      if (s.note) body.appendChild(el("div", "note", s.note));
-      li.appendChild(body);
+      const stageBody = el("div", "stage-body");
+      stageBody.appendChild(el("div", "title", s.title));
+      if (s.note) stageBody.appendChild(el("div", "note", s.note));
+      li.appendChild(stageBody);
       ul.appendChild(li);
     });
-    card.appendChild(ul);
+    body.appendChild(ul);
   }
 
-  if (p.updatedAt) card.appendChild(el("div", "meta", "Обновлено: " + p.updatedAt));
+  if (p.updatedAt) body.appendChild(el("div", "meta", "Обновлено: " + p.updatedAt));
 
+  card.appendChild(body);
   return card;
 }
 
