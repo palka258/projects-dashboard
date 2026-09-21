@@ -63,19 +63,19 @@
       "id": "alias",
       "name": "Alias",
       "status": "in_progress",
-      "version": "1.0.1 (build 2)",
+      "version": "1.0.2 (build 3)",
       "repo": "https://github.com/palka258/alias",
       "liveUrl": "",
-      "description": "Мобильная игра «Алиас» на Flutter (iOS/Android), com.palka.alias. Живая версия 1.0.0 в App Store. Собрали пачку доработок по фидбеку, билд 1.0.1 (2) загружен в App Store Connect.",
+      "description": "Мобильная игра «Алиас» на Flutter (iOS/Android), com.palka.alias. Живая версия 1.0.0 в App Store. Билд 1.0.2 (3) загружен в App Store Connect с пачкой доработок и почти удвоенным словарём.",
       "updatedAt": "2026-09-21",
       "stages": [
         { "title": "Компактный переключатель языка", "status": "done", "note": "две большие плашки заменены на SegmentedButton с флагами" },
-        { "title": "Больше слов во всех режимах", "status": "done", "note": "хардкор 40→70, остальные уровни тоже расширены" },
-        { "title": "«Déjà vu» на французском в английской колоде", "status": "done", "note": "заменено на Serendipity" },
         { "title": "Анимация карточки при свайпе/кнопках", "status": "done", "note": "заодно поправлено перепутанное направление свайпа" },
+        { "title": "«Déjà vu» на французском в английской колоде", "status": "done", "note": "заменено на Serendipity" },
         { "title": "Играть заново теми же командами", "status": "done", "note": "кнопка на экране результатов, сбрасывает счёт без повторного ввода команд" },
-        { "title": "Билд 1.0.1 (2) загружен в App Store Connect", "status": "done", "note": "altool upload succeeded, Apple сейчас обрабатывает билд" },
-        { "title": "Отправить 1.0.1 на ревью в App Store", "status": "todo", "note": "как только билд обработается — создать версию в App Store Connect, прикрепить билд и отправить на ревью" }
+        { "title": "Словарь расширен вдвое", "status": "done", "note": "333 → 612 слов на язык: новые категории во всех уровнях, хардкор особенно" },
+        { "title": "Билд 1.0.2 (3) загружен в App Store Connect", "status": "done", "note": "altool upload succeeded, Apple сейчас обрабатывает билд" },
+        { "title": "Отправить 1.0.2 на ревью в App Store", "status": "todo", "note": "как только билд обработается — создать версию в App Store Connect, прикрепить билд и отправить на ревью" }
       ]
     }
   ]
