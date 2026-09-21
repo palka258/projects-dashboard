@@ -121,6 +121,17 @@
   .badge.done { color: var(--done); background: var(--done-bg); }
   .badge.in_progress { color: var(--progress); background: var(--progress-bg); }
   .badge.todo { color: var(--todo); background: var(--todo-bg); }
+  .version {
+    font-size: 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .head-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .desc {
     color: var(--text-dim);
     font-size: 14px;
@@ -206,7 +217,10 @@ function renderProject(p) {
   const summary = document.createElement("summary");
   const head = el("div", "card-head");
   head.appendChild(el("h2", null, p.name));
-  head.appendChild(el("span", "badge " + p.status, STATUS_LABEL[p.status] || p.status));
+  const badges = el("div", "head-badges");
+  if (p.version) badges.appendChild(el("span", "version", p.version));
+  badges.appendChild(el("span", "badge " + p.status, STATUS_LABEL[p.status] || p.status));
+  head.appendChild(badges);
   summary.appendChild(head);
   summary.appendChild(el("span", "chevron", "▸"));
   card.appendChild(summary);
