@@ -66,7 +66,7 @@
       "version": "1.0.1 (build 2)",
       "repo": "https://github.com/palka258/alias",
       "liveUrl": "",
-      "description": "Мобильная игра «Алиас» на Flutter (iOS/Android), com.palka.alias. Живая версия 1.0.0 в App Store. Собрали пачку доработок по фидбеку и отправили билд 1.0.1 (2) в App Store Connect.",
+      "description": "Мобильная игра «Алиас» на Flutter (iOS/Android), com.palka.alias. Живая версия 1.0.0 в App Store. Собрали пачку доработок по фидбеку, билд 1.0.1 (2) загружен в App Store Connect.",
       "updatedAt": "2026-09-21",
       "stages": [
         { "title": "Компактный переключатель языка", "status": "done", "note": "две большие плашки заменены на SegmentedButton с флагами" },
@@ -74,7 +74,8 @@
         { "title": "«Déjà vu» на французском в английской колоде", "status": "done", "note": "заменено на Serendipity" },
         { "title": "Анимация карточки при свайпе/кнопках", "status": "done", "note": "заодно поправлено перепутанное направление свайпа" },
         { "title": "Играть заново теми же командами", "status": "done", "note": "кнопка на экране результатов, сбрасывает счёт без повторного ввода команд" },
-        { "title": "Отправить билд 1.0.1 (2) на ревью в App Store", "status": "todo", "note": "загружен в App Store Connect, нужно создать релиз и отправить на ревью" }
+        { "title": "Билд 1.0.1 (2) загружен в App Store Connect", "status": "done", "note": "altool upload succeeded, Apple сейчас обрабатывает билд" },
+        { "title": "Отправить 1.0.1 на ревью в App Store", "status": "todo", "note": "как только билд обработается — создать версию в App Store Connect, прикрепить билд и отправить на ревью" }
       ]
     }
   ]
